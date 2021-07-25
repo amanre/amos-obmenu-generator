@@ -28,15 +28,11 @@ require "$ENV{HOME}/.config/obmenu-generator/config.pl";
 my $editor = $CONFIG->{editor};
 
 our $SCHEMA = [
-	{sep => "ArcoLinux"},
+	{sep => "AMOS"},
     #          COMMAND                 LABEL                ICON
     {item => ['exo-open --launch TerminalEmulator',                                 'Terminal',          'terminal']},
     {item => ['exo-open --launch FileManager',                                      'File Manager',      'file-manager']},
     {item => ['exo-open --launch WebBrowser ',                                      'Web Browser',       'webbrowser-app']},
-<<<<<<< HEAD
-    {item => ['geany',                                                              'Text Editor',       'geany']},
-=======
->>>>>>> 916a8c19bc2250e7794f71611d9217d3352ca0b2
     {sep => undef},
 
     #          NAME            LABEL                ICON
@@ -52,102 +48,13 @@ our $SCHEMA = [
     {cat => ['settings',    'Settings',    'gnome-settings']},
     {cat => ['system',      'System',      'applications-system']},
 
-<<<<<<< HEAD
-    #{cat => ['qt',          'QT Applications',    'qt4logo']},
-    #{cat => ['gtk',         'GTK Applications',   'gnome-applications']},
-    #{cat => ['x_xfce',      'XFCE Applications',  'applications-other']},
-    #{cat => ['gnome',       'GNOME Applications', 'gnome-applications']},
-    #{cat => ['consoleonly', 'CLI Applications',   'applications-utilities']},
-
-    {sep => undef},
-    {pipe => ['am-places-pipemenu',         'Places',       'folder']},
-    {pipe => ['am-recent-files-pipemenu',   'Recent Files', 'folder-recent']},
-
-    ## Custom advanced settings
-    #{sep => "Settings"},
     {sep => undef},
 
-    {pipe => ['am-conky-pipemenu',  'Conky',        'conky']},
-
+    
     {begin_cat => ['Preferences', 'theme']},
 
-        {item => ['nitrogen',                               'Nitrogen',         'nitrogen']},
-        {item => ['gksudo lightdm-gtk-greeter-settings',    'LightDM Appearance',       'theme']},
-        {item => ['lxappearance',                           'Lxappearance',             'theme']},
-        {item => ['geany ~/.config/termite/config',         'Termite Appearance',       'theme']},
-        {item => ['xfce4-appearance-settings',              'Xfce4 Appearance',         'preferences-desktop-theme']},
-        {sep => undef},
-        {item => ["gksudo geany /etc/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm.conf",  'Login Settings','login']},
-        {item => ['exo-preferred-applications',             'Preferred Applications',   'preferred-applications']},
-        {item => ['system-config-printer',                  'Printing',                 'printer']},
-        {item => ['pavucontrol',                            'Sound Preferences',        'multimedia-volume-control']},
-        {item => ['xfce4-settings-manager',                 'Xfce4 Settings Manager',   'preferences-desktop']},
-        {sep => undef},
-
-        {pipe => ['am-compositor',      'Compositor',      'compton']},
-        {begin_cat => ['Openbox', 'openbox']},
-            {item => ["$editor ~/.config/openbox/menu.xml",     'Edit menu.xml',                 'text-xml']},
-            {item => ["$editor ~/.config/openbox/rc.xml",       'Edit rc.xml',                   'text-xml']},
-            {item => ["$editor ~/.config/openbox/autostart",    'Edit autostart',                'text-xml']},
-            {sep => undef},
-            {item => ['obmenu3',                                'GUI Menu Editor',               'theme']},
-            {item => ['obconf',                                 'GUI Config Tool',               'theme']},
-            {item => ['obkey',                                  'GUI Keybinds',                  'theme']},
-
-            {sep => undef},
-            {item => ['openbox --restart',                      'Restart Openbox',               'openbox']},
-            {item => ['openbox --reconfigure',                  'Reconfigure Openbox',           'openbox']},
-        {end_cat => undef},
-        {pipe => ['am-tint2-pipemenu',  'Tint2',        'tint2']},
-        {item => ['tint2conf',          'Tint2 GUI',    'tint2conf']},
-    {end_cat => undef},
-
-     # Preferences
-    {begin_cat => ['System Settings', 'settings']},
-        {item => ['pamac-manager',  'Pamac Updater and Package Manager',    'pamac']},
-        {sep => undef},
-        {item => ["gksudo thunar",  'File Manager As Root',     'thunar']},
-        {item => ["gksudo geany",   'Text Editor As Root',      'geany']},
-        {sep => undef},
-        {item => ["gnome-disks", 			'Disks',                  				'gnome-disks']},
-        {item => ["gksudo gparted", 'GParted',                  'gparted']},
-        {item => ["hardinfo", 				'System Profiler and Benchmark',       	'hardinfo']},
-        {item => ["xfce4-taskmanager", 		'Taskmanager',                  		'gnome-system-monitor']},
-
-    {end_cat => undef},
-
-    {sep => undef},
-    # obmenu-generator
-    {begin_cat => ['Obmenu-Generator', 'menu-editor']},
-        {item => ["$editor ~/.config/obmenu-generator/schema.pl", 'Menu Schema', 'text-x-source']},
-        {item => ["$editor ~/.config/obmenu-generator/config.pl", 'Menu Config', 'text-x-source']},
-        {sep  => undef},
-        {item => ['obmenu-generator -p',       'Generate a pipe menu',              'menu-editor']},
-        {item => ['obmenu-generator -s -c',    'Generate a static menu',            'menu-editor']},
-        {item => ['obmenu-generator -p -i',    'Generate a pipe menu with icons',   'menu-editor']},
-        {item => ['obmenu-generator -s -i -c', 'Generate a static menu with icons', 'menu-editor']},
-        {sep  => undef},
-        {item => ['obmenu-generator -d',       'Refresh Icon Set',                  'gtk-refresh']},
-    {end_cat => undef},
-
-    {sep => undef},
-    {pipe => ['am-need-to-know-pipemenu',      'Need To Know',                      'stock_about']},
-    {sep  => undef},
-    {pipe => ['am-help-pipemenu',              'Help &amp; Resources',              'info']},
-    {pipe => ['am-kb-pipemenu',                'Display Keybinds',                  'cs-keyboard']},
-    ## The xscreensaver lock command
-    #{item => ['xscreensaver-command -lock', 'Lock', 'system-lock-screen']},
-    {sep => undef},
-    {item => ['arcolinux-logout',              'Lock Screen',                       'lock']},
-    {item => ['arcolinux-logout',              'Exit Openbox',                      'exit']},
-=======
-    {sep => undef},
-
-    {pipe => ['am-conky-pipemenu',  'Conky',        'conky']},
-
-    {begin_cat => ['Preferences', 'theme']},
-
-        {item => ['nitrogen',                               'Nitrogen',         'nitrogen']},
+        {item => ['nitrogen',                               'Nitrogen',                 'nitrogen']},
+        {item => ['sddm-config-editor',                     'Sddm application',         'theme']},
         {item => ['lxappearance',                           'Lxappearance',             'theme']},
         {item => ['system-config-printer',                  'Printing',                 'printer']},
         {item => ['xfce4-settings-manager',                 'Xfce4 Settings Manager',   'preferences-desktop']},
@@ -191,6 +98,5 @@ our $SCHEMA = [
     {sep => undef},
     {item => ['arcolinux-logout',                      'Lock Screen',                       'lock']},
     {item => ['arcolinux-logout',                      'Exit Openbox',                      'exit']},
->>>>>>> 916a8c19bc2250e7794f71611d9217d3352ca0b2
 
 ]
