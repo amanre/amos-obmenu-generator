@@ -75,7 +75,11 @@ our $CONFIG = {
                            },
   "locale_support"      => 1,
   "missing_icon"        => "gtk-missing-image",
+<<<<<<< HEAD
   "terminal"            => "urxvt",
+=======
+  "terminal"            => "xfce4-terminal",
+>>>>>>> dde8d793c6a3e8658f3cc07483d36fa5f91b9369
   "use_gtk3"            => 0,
   "VERSION"             => 0.89,
 }
