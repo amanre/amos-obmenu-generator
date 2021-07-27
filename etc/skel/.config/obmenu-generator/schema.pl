@@ -28,11 +28,7 @@ require "$ENV{HOME}/.config/obmenu-generator/config.pl";
 my $editor = $CONFIG->{editor};
 
 our $SCHEMA = [
-<<<<<<< HEAD
 	{sep => "Archlinux"},
-=======
-	{sep => "AMOS"},
->>>>>>> dde8d793c6a3e8658f3cc07483d36fa5f91b9369
     #          COMMAND                 LABEL                ICON
     {item => ['exo-open --launch TerminalEmulator',                                 'Terminal',          'terminal']},
     {item => ['exo-open --launch FileManager',                                      'File Manager',      'file-manager']},
@@ -58,10 +54,6 @@ our $SCHEMA = [
     {begin_cat => ['Preferences', 'theme']},
 
         {item => ['nitrogen',                               'Nitrogen',                 'nitrogen']},
-<<<<<<< HEAD
-=======
-        {item => ['sddm-config-editor',                     'Sddm application',         'theme']},
->>>>>>> dde8d793c6a3e8658f3cc07483d36fa5f91b9369
         {item => ['lxappearance',                           'Lxappearance',             'theme']},
         {item => ['system-config-printer',                  'Printing',                 'printer']},
         {item => ['xfce4-settings-manager',                 'Xfce4 Settings Manager',   'preferences-desktop']},
