@@ -73,9 +73,7 @@ our $SCHEMA = [
             {item => ['openbox --restart',                      'Restart Openbox',               'openbox']},
             {item => ['openbox --reconfigure',                  'Reconfigure Openbox',           'openbox']},
         {end_cat => undef},
-        {pipe => ['am-tint2-pipemenu',  'Tint2',        'tint2']},
-        {item => ['tint2conf',          'Tint2 GUI',    'tint2conf']},
-
+        
         {sep => undef},
 
     	
